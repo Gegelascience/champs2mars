@@ -12,7 +12,9 @@
     <body>
         <a-scene background="color:#F0FFFF">
             <!-- Camera -->
-            <a-entity id="cam" cam_move camera look-controls position="0 1.5 138"></a-entity>
+            <a-entity id="cam" cam_move position="0 1.5 138">
+              <a-camera></a-camera>
+            </a-entity>
       
             <!--Tour eiffel-->
             <a-eiffel position="0 3.5 -47.5"  scale="2.3 2.3 2.3" ></a-eiffel>
