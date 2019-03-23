@@ -1,9 +1,23 @@
 AFRAME.registerComponent("cam_move", {
-  init: function() {},
+  schema: {
+    evol: { type: "number", default: 0 }
+  },
+  init: function() {
+    document.addEventListener("blur", event => {
+      this.data.evol = 0;
+      var pos = {
+        x: 0,
+        y: 1.5,
+        z: 138
+      };
+      this.el.setAttribute("position", pos);
+    });
+  },
 
   tick: function(time, timeDelta) {
     // Do something on every scene tick or frame.
-    var state = time % 62000;
+    this.data.evol += timeDelta;
+    var state = this.data.evol % 62000;
     var pos = this.el.getAttribute("position");
     if (state <= 5250) {
       pos.x += (20 * timeDelta) / 5250;
