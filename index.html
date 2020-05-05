@@ -1,92 +1,96 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Champs de Mars</title>
-        <script src="./aframe.min.js" ></script>
-        <script src="./primitives/a-eiffel.js"></script>
-        <script src="./components/tree.js"></script>
-        <script src="./components/greenarea.js"></script>
-        <script src="./components/car.js"></script>
-        <script src="./components/cam_move.js"></script>
-    </head>
-    <body>
-        <a-scene background="color:#F0FFFF">
-            <!-- Camera -->
-            <a-entity id="cam" cam_move position="0 1.5 138">
-              <a-camera></a-camera>
-            </a-entity>
-      
-            <!--Tour eiffel-->
-            <a-eiffel position="0 3.5 -47.5"  scale="2.3 2.3 2.3" ></a-eiffel>
-      
-            <!--trottoir tour eiffel-->
-            <a-plane  color="#9793a1" height="125" width="123" position="0 0 -47.5" rotation="-90 0 0" static-body ></a-plane>
-      
-            <!--route-->
-            <a-plane id='road'  color="#808080" width="123" height="8" position="0 0 19" rotation="-90 0 0" static-body></a-plane>
-      
-            <!--passages pieton-->
-            <a-plane color="white" width="10" height="1" position="20 0.03 17" rotation="-90 0 0" ></a-plane>
-            <a-plane color="white" width="10" height="1" position="20 0.03 19" rotation="-90 0 0" ></a-plane>
-            <a-plane color="white" width="10" height="1" position="20 0.03 21" rotation="-90 0 0" ></a-plane>
-      
-            <a-plane color="white" width="10" height="1" position="-20 0.03 17" rotation="-90 0 0" ></a-plane>
-            <a-plane color="white" width="10" height="1" position="-20 0.03 19" rotation="-90 0 0" ></a-plane>
-            <a-plane color="white" width="10" height="1" position="-20 0.03 21" rotation="-90 0 0" ></a-plane>
-      
-            <!--voitures-->
-            <a-entity id="redCar" car position="0 0 17" >
-              <a-animation attribute="position" dur="10500" easing="linear" fill="forward" from="-61.5 0 17" to="61.5 0 17" repeat="indefinite "></a-animation>
-            </a-entity>
-      
-            <a-entity id="yellowCar" car="teinte:yellow;sens:true" position="0 0 21" >
-              <a-animation attribute="position" dur="20000" easing="linear" fill="forward" from="61.5 0 21" to="-61.5 0 21" repeat="indefinite "></a-animation>
-            </a-entity>
-      
-      
-      
-            <!--trottoir champs de mars-->
-            <a-plane  color="#9793a1" width="123" height="2" position="0 0 24" rotation="-90 0 0" static-body ></a-plane>        
-      
-            <!--zones vertes champs de mars-->
-            <a-entity greenarea  position="0 0 50" static-body ></a-entity>
-            <a-entity greenarea  position="0 0 110" static-body ></a-entity>
-      
-            <!--arbustes-->
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 50" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 50" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 70" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 30" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 70" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 30" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 110" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 110" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 130" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 90" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 130" ></a-cone>
-            <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 90" ></a-cone>
-      
-            <!--arbres champs de mars-->
-            <a-entity treecarre  position="-27 0 54" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 42" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 30" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 66" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 78" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 54" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 42" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 30" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 66" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 78" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 90" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 102" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 114" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 126" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="-27 0 138" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 90" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 102" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 114" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 126" scale="1.25 1.25 1.25"></a-entity>
-            <a-entity treecarre  position="27 0 138" scale="1.25 1.25 1.25"></a-entity>
-          </a-scene>
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Champs de Mars</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="./primitives/a-eiffel.js"></script>
+  <script src="./components/tree.js"></script>
+  <script src="./components/greenarea.js"></script>
+  <script src="./components/car.js"></script>
+  <script src="./components/cam_move.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:#F0FFFF">
+    <!-- Camera -->
+    <a-entity id="cam" cam_move position="0 1.5 138">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <!--Tour eiffel-->
+    <a-eiffel position="0 3.5 -47.5" scale="2.3 2.3 2.3"></a-eiffel>
+
+    <!--trottoir tour eiffel-->
+    <a-plane color="#9793a1" height="125" width="123" position="0 0 -47.5" rotation="-90 0 0" static-body></a-plane>
+
+    <!--route-->
+    <a-plane id='road' color="#808080" width="123" height="8" position="0 0 19" rotation="-90 0 0" static-body>
+    </a-plane>
+
+    <!--passages pieton-->
+    <a-plane color="white" width="10" height="1" position="20 0.03 17" rotation="-90 0 0"></a-plane>
+    <a-plane color="white" width="10" height="1" position="20 0.03 19" rotation="-90 0 0"></a-plane>
+    <a-plane color="white" width="10" height="1" position="20 0.03 21" rotation="-90 0 0"></a-plane>
+
+    <a-plane color="white" width="10" height="1" position="-20 0.03 17" rotation="-90 0 0"></a-plane>
+    <a-plane color="white" width="10" height="1" position="-20 0.03 19" rotation="-90 0 0"></a-plane>
+    <a-plane color="white" width="10" height="1" position="-20 0.03 21" rotation="-90 0 0"></a-plane>
+
+    <!--voitures-->
+    <a-entity id="redCar" car position="0 0 17"
+      animation='property:position;from:-61.5 0 17;to:61.5 0 17;dur:20000;easing:linear;loop:true'>
+    </a-entity>
+
+    <a-entity id="yellowCar" car="teinte:yellow;sens:true" position="0 0 21"
+      animation='property:position;from:61.5 0 21;to:-61.5 0 21;dur:20000;easing:linear;loop:true'>
+    </a-entity>
+
+
+
+    <!--trottoir champs de mars-->
+    <a-plane color="#9793a1" width="123" height="2" position="0 0 24" rotation="-90 0 0" static-body></a-plane>
+
+    <!--zones vertes champs de mars-->
+    <a-entity greenarea position="0 0 50" static-body></a-entity>
+    <a-entity greenarea position="0 0 110" static-body></a-entity>
+
+    <!--arbustes-->
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 50"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 50"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 70"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 30"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 70"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 30"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 110"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 110"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 130"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="-13 1 90"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 130"></a-cone>
+    <a-cone color="green" radius-top="0" radius-bottom="1" height="2.5" position="13 1 90"></a-cone>
+
+    <!--arbres champs de mars-->
+    <a-entity treecarre position="-27 0 54" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 42" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 30" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 66" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 78" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 54" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 42" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 30" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 66" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 78" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 90" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 102" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 114" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 126" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="-27 0 138" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 90" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 102" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 114" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 126" scale="1.25 1.25 1.25"></a-entity>
+    <a-entity treecarre position="27 0 138" scale="1.25 1.25 1.25"></a-entity>
+  </a-scene>
+</body>
+
 </html>
